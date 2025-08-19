@@ -1,0 +1,676 @@
+
+
+{
+    "meta": {
+    "name": "Narrative Clicker Engine - Crypto Theme",
+    "version": "engine_v3.0",
+    "engine": {
+    "tick_seconds_recommended": 0.1,
+    "cost_scaling_recommended": 1.25,
+    "currency_start": 1,
+    "total_journey_time": "2-3 hours first playthrough",
+    "offline_accrual_cap": {
+    "minutes": 60,
+    "efficiency": 0.7
+    }
+    },
+    "theme": {
+    "id": "crypto_satire",
+    "name": "Crypto Bubble Chronicles",
+    "currency_name": "Coins",
+    "click_action": "Mining",
+    "core_object": "Glass",
+    "setting": "Digital Castle"
+    },
+    "notes": "Generalized narrative clicker engine with swappable theme data.",
+    "displayFormatting": "Display all numbers with appropriate scaling (K, M, B) for readability"
+    },
+    "narrative_stages": [
+    {
+    "id": "stage1",
+    "order": 1,
+    "unlock_condition": { "type": "auto" },
+    "duration_minutes": 15,
+    "unlocks": {
+    "generators": ["generator1", "generator2"],
+    "upgrades": [],
+    "achievements": []
+    },
+    "theme": {
+    "key": "glass_castle",
+    "name": "Glass in Crypto Castle",
+    "description": "Water → Steam Power. Ordinary resource becomes primitive energy economy.",
+    "visual": {
+    "object_state": "simple_glass_water",
+    "environment": "stone_castle",
+    "effects": ["steam_rising"],
+    "symbols": []
+    },
+    "story_text": "In the beginning, there was just a glass of water in a castle made of promises…"
+    }
+    },
+    {
+    "id": "stage2",
+    "order": 2,
+    "unlock_condition": { "type": "currency", "value": 5000 },
+    "duration_minutes": 20,
+    "unlocks": {
+    "generators": ["generator3"],
+    "upgrades": ["upgrade1"],
+    "achievements": ["achievement1"]
+    },
+    "theme": {
+    "key": "btc_miracle",
+    "name": "Bitcoin Wizard Jesus: Water → Wine",
+    "description": "Miracle upgrade → MAGIC INTERNET MONEY from nothing.",
+    "visual": {
+    "object_state": "golden_wine",
+    "environment": "stone_castle",
+    "effects": ["miracle_glow"],
+    "symbols": ["btc_floating"]
+    },
+    "story_text": "And lo, the water became wine, and the people said ‘surely this is magic’…"
+    }
+    },
+    {
+    "id": "stage3",
+    "order": 3,
+    "unlock_condition": { "type": "currency", "value": 50000 },
+    "duration_minutes": 25,
+    "unlocks": {
+    "generators": ["generator4"],
+    "upgrades": ["upgrade2"],
+    "achievements": ["achievement2"]
+    },
+    "theme": {
+    "key": "cryptokitty_chaos",
+    "name": "CryptoKitty Breaks Glass → Autoclick",
+    "description": "Chaos unlocks automation. Dumb speculation accidentally fuels progress.",
+    "visual": {
+    "object_state": "cracked_glass",
+    "environment": "stone_castle",
+    "effects": ["chaos_energy", "autoclick_radiating"],
+    "symbols": ["cat_paw"]
+    },
+    "story_text": "A digital cat, worth more than a house, shattered everything we thought we knew…"
+    }
+    },
+    {
+    "id": "stage4",
+    "order": 4,
+    "unlock_condition": { "type": "currency", "value": 200000 },
+    "duration_minutes": 25,
+    "unlocks": {
+    "generators": ["generator5"],
+    "upgrades": ["upgrade3"],
+    "achievements": ["achievement3"]
+    },
+    "theme": {
+    "key": "eth_rocks",
+    "name": "ETH Rocks Add Weight → Stronger Autoclick",
+    "description": "Scarce uselessness amplifies output.",
+    "visual": {
+    "object_state": "weighted_glass",
+    "environment": "stone_castle",
+    "effects": ["pressure_buildup", "eth_glow"],
+    "symbols": ["heavy_rocks"]
+    },
+    "story_text": "They sold pictures of rocks for millions. The absurdity was the point…"
+    }
+    },
+    {
+    "id": "stage5",
+    "order": 5,
+    "unlock_condition": { "type": "currency", "value": 800000 },
+    "duration_minutes": 30,
+    "unlocks": {
+    "generators": ["generator6"],
+    "upgrades": ["upgrade4"],
+    "achievements": ["achievement4"]
+    },
+    "theme": {
+    "key": "dancing_vitalik",
+    "name": "Dancing Vitalik Repairs Glass (Liquid Staking)",
+    "description": "ETH as glue, staking mechanic introduced. The Merge as salvation.",
+    "visual": {
+    "object_state": "merging_glass",
+    "environment": "stone_castle",
+    "effects": ["dance_energy", "repair_glow"],
+    "symbols": ["vitalik_dancing", "eth_streams"]
+    },
+    "story_text": "And Vitalik danced, and the chain was made whole, and staking was born…"
+    }
+    },
+    {
+    "id": "stage6",
+    "order": 6,
+    "unlock_condition": { "type": "currency", "value": 3000000 },
+    "duration_minutes": 30,
+    "unlocks": {
+    "generators": ["generator7"],
+    "upgrades": ["upgrade5"],
+    "achievements": ["achievement5"]
+    },
+    "theme": {
+    "key": "molten_metal",
+    "name": "Clay → Molten Metal (Miami Flamethrower)",
+    "description": "Hybrid ancient/futuristic vessel to hold extreme value.",
+    "visual": {
+    "object_state": "molten_vessel",
+    "environment": "miami_neon",
+    "effects": ["heat_waves", "transformation"],
+    "symbols": ["flamethrower", "neon_lights"]
+    },
+    "story_text": "In Miami they found the flamethrower, dusty but functional, at a Goodwill…"
+    }
+    },
+    {
+    "id": "stage7",
+    "order": 7,
+    "unlock_condition": { "type": "currency", "value": 10000000 },
+    "duration_minutes": 20,
+    "unlocks": {
+    "generators": ["generator8"],
+    "upgrades": ["upgrade6"],
+    "achievements": ["achievement6"]
+    },
+    "theme": {
+    "key": "diamond_hands",
+    "name": "Pressure Build-Up → Diamond Hands",
+    "description": "Collapse under weight, crystallization into diamond. Unbreakable hodling.",
+    "visual": {
+    "object_state": "diamond_crystal",
+    "environment": "rainbow_charts",
+    "effects": ["crystallization", "hodl_energy"],
+    "symbols": ["diamond_hands", "rainbow_patterns"]
+    },
+    "story_text": "Under impossible pressure, carbon becomes diamond. Paper hands become diamond…"
+    }
+    },
+    {
+    "id": "stage8",
+    "order": 8,
+    "unlock_condition": { "type": "currency", "value": 30000000 },
+    "duration_minutes": 15,
+    "unlocks": {
+    "generators": [],
+    "upgrades": ["upgrade7"],
+    "achievements": ["achievement7", "achievement8"]
+    },
+    "theme": {
+    "key": "quantum_apocalypse",
+    "name": "Quantum Computing Apocalypse → The Aftermath",
+    "description": "Ultimate rug pull. Value evaporates, but something endures.",
+    "visual": {
+    "object_state": "monument_ruins",
+    "environment": "desolation",
+    "effects": ["apocalypse_aftermath"],
+    "symbols": ["luci_mask", "green_tree", "chipped_glass"]
+    },
+    "story_text": "When the quantum computers came, they broke everything. But in the ruins, truth remained…"
+    }
+    }
+    ],
+    "generators": [
+    {
+    "id": "generator1",
+    "tier": 1,
+    "baseCost": 15,
+    "baseRate": 0.5,
+    "costScaling": 1.25,
+    "unlock_condition": { "type": "narrative_stage", "value": "stage1" },
+    "theme": {
+    "key": "tap_wallet",
+    "name": "Tap Wallet",
+    "description": "Manual taps and tiny auto-taps. The immediate dopamine source."
+    }
+    },
+    {
+    "id": "generator2",
+    "tier": 2,
+    "baseCost": 500,
+    "baseRate": 2.0,
+    "costScaling": 1.25,
+    "unlock_condition": { "type": "narrative_stage", "value": "stage1" },
+    "theme": {
+    "key": "solo_miner",
+    "name": "Solo Miner",
+    "description": "A single enthusiast-run rig in the castle basement."
+    }
+    },
+    {
+    "id": "generator3",
+    "tier": 3,
+    "baseCost": 8000,
+    "baseRate": 12.0,
+    "costScaling": 1.25,
+    "unlock_condition": { "type": "narrative_stage", "value": "stage2" },
+    "theme": {
+    "key": "mining_farm",
+    "name": "Mining Farm",
+    "description": "The miracle multiplies. Wine needs infrastructure."
+    }
+    },
+    {
+    "id": "generator4",
+    "tier": 4,
+    "baseCost": 80000,
+    "baseRate": 80.0,
+    "costScaling": 1.25,
+    "unlock_condition": { "type": "narrative_stage", "value": "stage3" },
+    "theme": {
+    "key": "asic_array",
+    "name": "ASIC Array",
+    "description": "Chaos-powered specialized rigs. Cat-fueled automation."
+    }
+    },
+    {
+    "id": "generator5",
+    "tier": 5,
+    "baseCost": 600000,
+    "baseRate": 400.0,
+    "costScaling": 1.25,
+    "unlock_condition": { "type": "narrative_stage", "value": "stage4" },
+    "theme": {
+    "key": "data_center",
+    "name": "Data Center",
+    "description": "Rock-weighted facilities. Heavy with purpose."
+    }
+    },
+    {
+    "id": "generator6",
+    "tier": 6,
+    "baseCost": 3000000,
+    "baseRate": 2000.0,
+    "costScaling": 1.25,
+    "unlock_condition": { "type": "narrative_stage", "value": "stage5" },
+    "theme": {
+    "key": "staking_pool",
+    "name": "Staking Pool",
+    "description": "Vitalik’s dance partners. ETH flows like healing energy."
+    }
+    },
+    {
+    "id": "generator7",
+    "tier": 7,
+    "baseCost": 12000000,
+    "baseRate": 8000.0,
+    "costScaling": 1.25,
+    "unlock_condition": { "type": "narrative_stage", "value": "stage6" },
+    "theme": {
+    "key": "defi_protocol",
+    "name": "DeFi Protocol",
+    "description": "Miami-forged yield machinery. Hot metal, hotter returns."
+    }
+    },
+    {
+    "id": "generator8",
+    "tier": 8,
+    "baseCost": 40000000,
+    "baseRate": 30000.0,
+    "costScaling": 1.25,
+    "unlock_condition": { "type": "narrative_stage", "value": "stage7" },
+    "theme": {
+    "key": "whale_accumulator",
+    "name": "Whale Accumulator",
+    "description": "Diamond-handed leviathans. Pressure creates permanence."
+    }
+    }
+    ],
+    "upgrades": [
+    {
+    "id": "upgrade1",
+    "cost": 2000,
+    "effect": {
+    "type": "multiplier",
+    "target": "global",
+    "value": 2.0
+    },
+    "unlock_condition": { "type": "narrative_stage", "value": "stage2" },
+    "theme": {
+    "key": "btc_miracle_mult",
+    "name": "Water → Wine Multiplier",
+    "description": "The miracle spreads. Double all production."
+    }
+    },
+    {
+    "id": "upgrade2",
+    "cost": 25000,
+    "effect": {
+    "type": "additive",
+    "target": "autoclick_rate",
+    "value": 0.5
+    },
+    "unlock_condition": { "type": "narrative_stage", "value": "stage3" },
+    "theme": {
+    "key": "chaos_autoclick",
+    "name": "CryptoKitty Automation",
+    "description": "Chaos breeds automation. +0.5 automatic clicks per second."
+    }
+    },
+    {
+    "id": "upgrade3",
+    "cost": 100000,
+    "effect": {
+    "type": "multiplier",
+    "target": "generator_category",
+    "category": "mining",
+    "value": 1.5
+    },
+    "unlock_condition": { "type": "narrative_stage", "value": "stage4" },
+    "theme": {
+    "key": "rock_weight_bonus",
+    "name": "ETH Rock Gravity",
+    "description": "Heavy rocks amplify all mining. +50% to mining generators."
+    }
+    },
+    {
+    "id": "upgrade4",
+    "cost": 400000,
+    "effect": {
+    "type": "multiplier",
+    "target": "generator",
+    "generator_id": "generator6",
+    "value": 2.0
+    },
+    "unlock_condition": { "type": "narrative_stage", "value": "stage5" },
+    "theme": {
+    "key": "liquid_stake_repair",
+    "name": "Vitalik’s Glue",
+    "description": "ETH repairs everything. Double staking pool output."
+    }
+    },
+    {
+    "id": "upgrade5",
+    "cost": 1500000,
+    "effect": {
+    "type": "multiplier",
+    "target": "global",
+    "value": 1.3
+    },
+    "unlock_condition": { "type": "narrative_stage", "value": "stage6" },
+    "theme": {
+    "key": "miami_heat",
+    "name": "Goodwill Flamethrower",
+    "description": "Miami heat intensifies. +30% to all generators."
+    }
+    },
+    {
+    "id": "upgrade6",
+    "cost": 5000000,
+    "effect": {
+    "type": "multiplier",
+    "target": "currency_per_click",
+    "value": 10
+    },
+    "unlock_condition": { "type": "narrative_stage", "value": "stage7" },
+    "theme": {
+    "key": "diamond_crystallize",
+    "name": "Pressure Crystallization",
+    "description": "Diamond hands, diamond clicks. 10x click power."
+    }
+    },
+    {
+    "id": "upgrade7",
+    "cost": 20000000,
+    "effect": {
+    "type": "additive",
+    "target": "legacy_bonus",
+    "value": 0.1
+    },
+    "unlock_condition": { "type": "narrative_stage", "value": "stage8" },
+    "theme": {
+    "key": "aftermath_wisdom",
+    "name": "Post-Apocalypse Clarity",
+    "description": "Wisdom from ruins. +10% legacy bonus for next playthrough."
+    }
+    }
+    ],
+    "achievements": [
+    {
+    "id": "achievement1",
+    "unlock_condition": { "type": "narrative_complete", "stage": "stage2" },
+    "reward": {
+    "type": "currency",
+    "value": 1000
+    },
+    "theme": {
+    "key": "first_miracle",
+    "name": "Water Sommelier",
+    "description": "Witness the first miracle. Wine from water."
+    }
+    },
+    {
+    "id": "achievement2",
+    "unlock_condition": { "type": "narrative_complete", "stage": "stage3" },
+    "reward": {
+    "type": "multiplier",
+    "target": "global",
+    "value": 1.05
+    },
+    "theme": {
+    "key": "cat_chaos",
+    "name": "Digital Pet Owner",
+    "description": "Survive the CryptoKitty chaos. +5% global output."
+    }
+    },
+    {
+    "id": "achievement3",
+    "unlock_condition": { "type": "narrative_complete", "stage": "stage4" },
+    "reward": {
+    "type": "currency",
+    "value": 50000
+    },
+    "theme": {
+    "key": "rock_collector",
+    "name": "JPEGmaxxing",
+    "description": "Understand the value of digital rocks."
+    }
+    },
+    {
+    "id": "achievement4",
+    "unlock_condition": { "type": "narrative_complete", "stage": "stage5" },
+    "reward": {
+    "type": "multiplier",
+    "target": "global",
+    "value": 1.1
+    },
+    "theme": {
+    "key": "merge_witness",
+    "name": "Proof of Stake Believer",
+    "description": "Dance with Vitalik. +10% global output."
+    }
+    },
+    {
+    "id": "achievement5",
+    "unlock_condition": { "type": "narrative_complete", "stage": "stage6" },
+    "reward": {
+    "type": "resistance",
+    "target": "heat",
+    "value": 1
+    },
+    "theme": {
+    "key": "miami_survivor",
+    "name": "Conference Veteran",
+    "description": "Survive Miami crypto culture. Heat immunity."
+    }
+    },
+    {
+    "id": "achievement6",
+    "unlock_condition": { "type": "narrative_complete", "stage": "stage7" },
+    "reward": {
+    "type": "multiplier",
+    "target": "currency_per_click",
+    "value": 2
+    },
+    "unlock_condition": { "type": "narrative_complete", "stage": "stage7" },
+    "reward": {
+    "type": "multiplier",
+    "target": "currency_per_click",
+    "value": 2
+    },
+    "theme": {
+    "key": "diamond_formed",
+    "name": "Pressure Tested",
+    "description": "Crystallize under pressure. Permanent click bonus."
+    }
+    },
+    {
+    "id": "achievement7",
+    "unlock_condition": { "type": "narrative_complete", "stage": "stage8" },
+    "reward": {
+    "type": "additive",
+    "target": "legacy_bonus",
+    "value": 0.25
+    },
+    "theme": {
+    "key": "apocalypse_survivor",
+    "name": "Post-Quantum",
+    "description": "Survive the end. Major legacy bonus."
+    }
+    },
+    {
+    "id": "achievement8",
+    "unlock_condition": { "type": "game_complete", "value": 1 },
+    "reward": {
+    "type": "nft_evolution",
+    "target": "final_form"
+    },
+    "theme": {
+    "key": "complete_journey",
+    "name": "Crypto Historian",
+    "description": "Complete the entire crypto journey. NFT reaches final evolution."
+    }
+    }
+    ],
+    "legacy_system": {
+    "description": "Permanent bonuses that carry between complete game restarts",
+    "base_bonus_per_completion": 0.15,
+    "max_completions_tracked": 10,
+    "bonuses": [
+    {
+    "type": "starting_currency",
+    "formula": {
+    "type": "linear",
+    "base": 500,
+    "multiplier": "completions"
+    },
+    "description": "Start with extra currency based on completions"
+    },
+    {
+    "type": "global_multiplier",
+    "formula": {
+    "type": "linear_additive",
+    "base": 1,
+    "increment": 0.15,
+    "variable": "completions"
+    },
+    "description": "Permanent global output multiplier"
+    },
+    {
+    "type": "narrative_speedup",
+    "formula": {
+    "type": "percentage_reduction",
+    "base": 1,
+    "reduction_per_completion": 0.1,
+    "max_reduction": 0.5
+    },
+    "description": "Narrative stages unlock faster (max 50% speedup)"
+    },
+    {
+    "type": "unlock_shortcuts",
+    "formula": {
+    "type": "threshold",
+    "thresholds": [
+    { "completions": 1, "unlocks": ["skip_tutorial"] },
+    { "completions": 3, "unlocks": ["auto_buy_options"] },
+    { "completions": 5, "unlocks": ["fast_transitions"] }
+    ]
+    },
+    "description": "Skip tutorial elements, auto-buy options, faster transitions"
+    }
+    ]
+    },
+    "art_evolution": {
+    "description": "Visual representation evolves based on narrative progression",
+    "core_object": "Glass",
+    "stages": [
+    {
+    "stage_id": "stage1",
+    "visual_state": "simple_glass_water",
+    "rarity_traits": ["castle_architecture", "water_clarity"],
+    "theme": {
+    "description": "Simple glass with water in stone castle"
+    }
+    },
+    {
+    "stage_id": "stage2",
+    "visual_state": "golden_wine",
+    "rarity_traits": ["wine_color", "btc_symbol_count", "miracle_glow"],
+    "theme": {
+    "description": "Golden wine fills glass, BTC symbols float"
+    }
+    },
+    {
+    "stage_id": "stage3",
+    "visual_state": "cracked_glass",
+    "rarity_traits": ["crack_pattern", "cat_breed", "chaos_intensity"],
+    "theme": {
+    "description": "Cat paw cracks glass, chaos energy radiates"
+    }
+    },
+    {
+    "stage_id": "stage4",
+    "visual_state": "weighted_glass",
+    "rarity_traits": ["rock_formation", "eth_glow", "weight_pressure"],
+    "theme": {
+    "description": "ETH rocks surround cracked glass"
+    }
+    },
+    {
+    "stage_id": "stage5",
+    "visual_state": "merging_glass",
+    "rarity_traits": ["dance_style", "merge_energy", "repair_quality"],
+    "theme": {
+    "description": "Vitalik dancing, merging energy repairs glass"
+    }
+    },
+    {
+    "stage_id": "stage6",
+    "visual_state": "molten_vessel",
+    "rarity_traits": ["metal_type", "miami_skyline", "neon_colors"],
+    "theme": {
+    "description": "Glass becomes molten metal vessel, Miami backdrop"
+    }
+    },
+    {
+    "stage_id": "stage7",
+    "visual_state": "diamond_crystal",
+    "rarity_traits": ["diamond_cut", "rainbow_intensity", "chart_patterns"],
+    "theme": {
+    "description": "Crystallized diamond vessel, rainbow charts"
+    }
+    },
+    {
+    "stage_id": "stage8",
+    "visual_state": "monument_ruins",
+    "rarity_traits": ["mask_expression", "tree_growth", "glass_chip_pattern", "sky_color"],
+    "theme": {
+    "description": "Desolate scene, Luci’s mask, green tree, chipped glass monument"
+    }
+    }
+    ],
+    "completion_bonuses": {
+    "first_completion": "Standard final form collectible",
+    "multiple_completions": "Enhanced rarity traits based on speed/efficiency",
+    "perfect_run": "Special golden variant with unique traits"
+    }
+    },
+    "new_game_plus": {
+    "description": "Complete game restart with legacy bonuses",
+    "unlock_condition": { "type": "narrative_complete", "stage": "stage8" },
+    "maintains": ["legacy_bonuses", "achievements", "art_collection"],
+    "resets": ["currency", "generators", "narrative_progress", "current_upgrades"],
+    "new_features": ["faster_progression", "skip_options", "advanced_strategies"]
+    }
+    }
