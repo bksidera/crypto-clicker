@@ -1,23 +1,47 @@
 
 
+/*
+ * Coding partner: Updated styles.css for a fantasy/card game theme
+ * - Inspired by Magic: The Gathering, Pokémon TCG, and D&D.
+ * - Uses rich, deep colors with parchment-like backgrounds.
+ * - Ornate, physical-looking borders and drop shadows.
+ * - A more traditional, fantasy-style font.
+ * - FIXED: Hover jitter bug by using scale instead of translateY
+*/
+
+/* --- Global Styles --- */
 body {
-    font-family: sans-serif;
-    background-color: #1a1a2e;
-    color: #e0e0e0;
+    font-family: 'Cinzel Decorative', serif;
+    background-color: #2e2a39; /* Deep, mystical purple-gray */
+    color: #f0e8d5; /* Off-white parchment tone */
     margin: 0;
-    padding: 20px;
+    padding: 30px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     min-height: 100vh;
+    font-size: 1.1em;
 }
 
+/* --- Visual cue for selected cards --- */
+.item-card.selected {
+    border-color: #f2c75c; /* Gold/yellow border */
+    box-shadow: 0 0 15px #f2c75c; /* A glowing gold shadow */
+    transform: scale(1.05); /* Make the card slightly larger */
+}
+
+/* --- Layout --- */
 .game-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    gap: 40px;
-    max-width: 1200px;
+    gap: 50px;
+    max-width: 1300px;
     width: 100%;
+    border: 4px solid #a89a8c; /* Bronze-like border */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    background-color: #5d5464; /* Deeper purple */
+    border-radius: 10px;
 }
 
 .main-display {
@@ -27,97 +51,203 @@ body {
     align-items: center;
 }
 
+.sidebar {
+    background-color: transparent;
+    border-left: 2px dashed #a89a8c;
+    padding-left: 30px;
+}
+
+/* --- Headings & Text --- */
 #currency-display {
-    font-size: 3em;
+    font-family: 'Cinzel', serif;
+    font-size: 3.5em;
     font-weight: bold;
-    color: #4CAF50;
+    color: #f2c75c; /* Rich gold color */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0;
 }
 
 #cps-display {
-    font-size: 1.2em;
-    color: #bbb;
-    margin-top: -10px;
-}
-
-#click-button {
-    cursor: pointer;
-    margin-top: 30px;
-    transition: transform 0.1s ease;
-}
-
-#click-button:active {
-    transform: scale(0.95);
-}
-
-.clickable-object {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    border: 5px solid #4CAF50;
-    box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
-}
-
-.narrative-panel {
-    background-color: #2a2a44;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-.sidebar {
-    background-color: #2a2a44;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    font-size: 1.3em;
+    color: #d1b48c;
+    margin-top: 5px;
 }
 
 .section-title {
-    font-size: 1.5em;
+    font-family: 'Cinzel', serif;
+    font-size: 1.8em;
     font-weight: bold;
-    color: #e0e0e0;
-    margin-bottom: 15px;
+    color: #f0e8d5;
+    margin-bottom: 20px;
     padding-bottom: 5px;
-    border-bottom: 2px solid #5a5a77;
+    border-bottom: 2px solid #a89a8c;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
+.narrative-panel {
+    background-color: #f0e8d5; /* Parchment background */
+    color: #333;
+    padding: 20px;
+    border: 3px solid #a89a8c;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    margin-top: 25px;
+    border-radius: 8px;
+}
+
+/* --- Buttons & Clickable Elements --- */
+#click-button {
+    cursor: pointer;
+    margin-top: 40px;
+    border: 3px solid #a89a8c;
+    background: linear-gradient(to bottom, #d69e2e, #9c731e); /* Gold gradient */
+    padding: 12px 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    font-family: 'Cinzel', serif;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    transition: transform 0.1s ease, box-shadow 0.3s ease;
+}
+
+#click-button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.clickable-object {
+    image-rendering: auto; /* Allow for smooth images */
+    border: 4px solid #a89a8c;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+}
+
+/* --- Items & Cards --- */
 .item-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 15px;
+    margin-bottom: 30px;
 }
 
 .item-card {
-    background-color: #3a3a55;
-    padding: 15px;
-    border-radius: 6px;
+    background-color: #5d5464;
+    padding: 20px;
+    border: 2px solid #a89a8c;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
     cursor: pointer;
-    transition: background-color 0.2s ease;
-    border: 1px solid #4a4a66;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
 }
 
 .item-card:hover {
-    background-color: #4a4a66;
+    transform: scale(1.02); /* Subtle grow instead of translateY - fixes jitter! */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5); 
 }
 
 .item-card.disabled {
-    opacity: 0.5;
+    opacity: 0.6;
     cursor: not-allowed;
+    border-color: #777;
+    filter: grayscale(80%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: none;
+}
+
+.item-card.disabled:hover {
+    transform: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .item-card h4 {
-    margin: 0 0 5px 0;
+    margin: 0 0 8px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #f2c75c;
 }
 
 .item-card p {
     margin: 0;
     font-size: 0.9em;
-    color: #bbb;
+    color: #e0d8c7;
 }
 
 .item-cost {
     font-weight: bold;
-    color: #4CAF50;
-    margin-top: 5px;
+    color: #f0e8d5;
+    margin-top: 8px;
+}
+
+/* --- Card-Specific Styles --- */
+#cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+#cards-container .item-card {
+    width: 200px;
+    text-align: center;
+    padding: 15px;
+    background-color: #5d5464;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+#cards-container .item-card img {
+    width: 100%;
+    height: auto;
+    border: 3px solid #a89a8c;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+#cards-container .item-card button {
+    margin-top: 15px;
+    padding: 10px;
+    background: #8e54e9; /* Mystical purple */
+    color: #fff;
+    border: 2px solid #4a3478;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Cinzel Decorative', serif;
+}
+
+#card-actions-container {
+    flex-direction: row;
+    justify-content: center;
+}
+
+#card-actions-container button {
+    padding: 15px 25px;
+    background: #4CAF50; /* A heroic green */
+    color: #fff;
+    border: 3px solid #3d8c40;
+    border-radius: 8px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    font-family: 'Cinzel', serif;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+#card-actions-container button:hover {
+    transform: scale(1.02);
+    box-shadow: 0 7px 15px rgba(0, 0, 0, 0.4);
+}
+
+#card-actions-container button.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    filter: grayscale(80%);
+}
+
+#card-actions-container button.disabled:hover {
+    transform: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
 }

@@ -1,0 +1,262 @@
+
+
+{
+    "meta": {
+      "name": "Crypto Card System",
+      "version": "2.0",
+      "description": "Card system integrated with narrative progression and crypto themes"
+    },
+    "card_types": [
+      {
+        "id": "btc_miner",
+        "name": "Bitcoin Miner",
+        "rarity": "common",
+        "description": "Early adopter energy. Boosts click power.",
+        "unlock_condition": { "type": "narrative_stage", "value": "stage2" },
+        "effects": {
+          "type": "click_power",
+          "base_value": 2.0,
+          "scaling_per_level": 1.5
+        },
+        "theme": {
+          "narrative_tie": "btc_miracle",
+          "flavor_text": "HODL strong, click stronger"
+        },
+        "intrinsic_value": 25,
+        "image": "assets/cards/btc_miner.png"
+      },
+      {
+        "id": "eth_staker",
+        "name": "ETH Staker", 
+        "rarity": "uncommon",
+        "description": "Vitalik's blessing. Provides steady autoclick.",
+        "unlock_condition": { "type": "narrative_stage", "value": "stage5" },
+        "effects": {
+          "type": "autoclick_rate",
+          "base_value": 1.0,
+          "scaling_per_level": 0.8
+        },
+        "theme": {
+          "narrative_tie": "dancing_vitalik",
+          "flavor_text": "The merge was just the beginning"
+        },
+        "intrinsic_value": 75,
+        "image": "assets/cards/eth_staker.png"
+      },
+      {
+        "id": "nft_flipper",
+        "name": "NFT Flipper",
+        "rarity": "common", 
+        "description": "Chaos energy from digital cats. Click multiplier.",
+        "unlock_condition": { "type": "narrative_stage", "value": "stage3" },
+        "effects": {
+          "type": "click_multiplier",
+          "base_value": 1.1,
+          "scaling_per_level": 0.05
+        },
+        "theme": {
+          "narrative_tie": "cryptokitty_chaos",
+          "flavor_text": "Right-click, save as... profit?"
+        },
+        "intrinsic_value": 35,
+        "image": "assets/cards/nft_flipper.png"
+      },
+      {
+        "id": "defi_protocol",
+        "name": "DeFi Protocol",
+        "rarity": "rare",
+        "description": "Miami heat amplifies everything. Global multiplier.",
+        "unlock_condition": { "type": "narrative_stage", "value": "stage6" },
+        "effects": {
+          "type": "global_multiplier", 
+          "base_value": 1.2,
+          "scaling_per_level": 0.1
+        },
+        "theme": {
+          "narrative_tie": "molten_metal",
+          "flavor_text": "Yield farming in paradise"
+        },
+        "intrinsic_value": 150,
+        "image": "assets/cards/defi_protocol.png"
+      },
+      {
+        "id": "diamond_hands",
+        "name": "Diamond Hands",
+        "rarity": "legendary",
+        "description": "Crystallized under pressure. Ultimate hodling power.",
+        "unlock_condition": { "type": "narrative_stage", "value": "stage7" },
+        "effects": {
+          "type": "click_power",
+          "base_value": 10.0,
+          "scaling_per_level": 5.0
+        },
+        "theme": {
+          "narrative_tie": "diamond_hands",
+          "flavor_text": "💎🙌 Never sell, only accumulate"
+        },
+        "intrinsic_value": 500,
+        "image": "assets/cards/diamond_hands.png"
+      },
+      {
+        "id": "quantum_survivor",
+        "name": "Quantum Survivor", 
+        "rarity": "mythic",
+        "description": "Witnessed the apocalypse. Transcendent power.",
+        "unlock_condition": { "type": "narrative_stage", "value": "stage8" },
+        "effects": {
+          "type": "global_multiplier",
+          "base_value": 2.0,
+          "scaling_per_level": 0.5
+        },
+        "theme": {
+          "narrative_tie": "quantum_apocalypse",
+          "flavor_text": "In the ruins, truth remained"
+        },
+        "intrinsic_value": 1000,
+        "image": "assets/cards/quantum_survivor.png"
+      }
+    ],
+    "rarity_tiers": [
+      {
+        "name": "common",
+        "color": "#808080",
+        "shine": false,
+        "drop_weight": 50
+      },
+      {
+        "name": "uncommon", 
+        "color": "#00ff00",
+        "shine": false,
+        "drop_weight": 30
+      },
+      {
+        "name": "rare",
+        "color": "#0066ff",
+        "shine": true,
+        "drop_weight": 15
+      },
+      {
+        "name": "legendary",
+        "color": "#ff6600",
+        "shine": true,
+        "drop_weight": 4
+      },
+      {
+        "name": "mythic",
+        "color": "#ff00ff",
+        "shine": true,
+        "drop_weight": 1
+      }
+    ],
+    "card_acquisition": {
+      "methods": [
+        {
+          "type": "purchase",
+          "cost_formula": {
+            "type": "exponential",
+            "base_cost": 1000,
+            "scaling": 1.15
+          },
+          "unlock_condition": { "type": "narrative_stage", "value": "stage2" }
+        },
+        {
+          "type": "narrative_reward",
+          "description": "Guaranteed card pack for completing narrative stages",
+          "rewards": [
+            { "stage": "stage2", "guaranteed_cards": ["btc_miner"], "bonus_packs": 1 },
+            { "stage": "stage3", "guaranteed_cards": ["nft_flipper"], "bonus_packs": 1 },
+            { "stage": "stage5", "guaranteed_cards": ["eth_staker"], "bonus_packs": 2 },
+            { "stage": "stage6", "guaranteed_cards": ["defi_protocol"], "bonus_packs": 2 },
+            { "stage": "stage7", "guaranteed_cards": ["diamond_hands"], "bonus_packs": 3 },
+            { "stage": "stage8", "guaranteed_cards": ["quantum_survivor"], "bonus_packs": 5 }
+          ]
+        }
+      ]
+    },
+    "combination_rules": {
+      "basic_combination": {
+        "description": "Combine two identical cards to increase level",
+        "input_requirements": {
+          "card_count": 2,
+          "same_name": true,
+          "same_rarity": true
+        },
+        "output": {
+          "level_increase": 1,
+          "effect_scaling": "multiply by level"
+        }
+      },
+      "rarity_upgrade": {
+        "description": "Combine multiple cards to upgrade rarity",
+        "input_requirements": {
+          "card_count": 3,
+          "same_name": true,
+          "same_rarity": true,
+          "max_rarity": "rare"
+        },
+        "output": {
+          "rarity_increase": 1,
+          "level_reset": 1
+        }
+      },
+      "special_combinations": [
+        {
+          "id": "crypto_trinity",
+          "description": "Combine BTC + ETH + NFT cards for special bonus",
+          "input_cards": ["btc_miner", "eth_staker", "nft_flipper"],
+          "output_card": {
+            "id": "crypto_oracle",
+            "name": "Crypto Oracle",
+            "rarity": "legendary",
+            "effects": {
+              "type": "global_multiplier",
+              "base_value": 3.0
+            }
+          }
+        }
+      ]
+    },
+    "passive_effects": {
+      "calculation_order": [
+        "click_power",
+        "click_multiplier", 
+        "autoclick_rate",
+        "global_multiplier"
+      ],
+      "stacking_rules": {
+        "click_power": "additive",
+        "autoclick_rate": "additive", 
+        "click_multiplier": "multiplicative",
+        "global_multiplier": "multiplicative"
+      }
+    },
+    "card_packs": {
+      "basic_pack": {
+        "cost": 1000,
+        "cards_per_pack": 3,
+        "rarity_distribution": "standard"
+      },
+      "premium_pack": {
+        "cost": 5000, 
+        "cards_per_pack": 5,
+        "rarity_distribution": "boosted",
+        "guaranteed_rare_or_better": 1
+      }
+    },
+    "ui_integration": {
+      "card_slots": {
+        "starting_slots": 10,
+        "max_slots": 50,
+        "slot_upgrade_cost": {
+          "type": "exponential",
+          "base_cost": 2000,
+          "scaling": 1.25
+        }
+      },
+      "display_options": {
+        "sort_methods": ["rarity", "level", "name", "effect_type", "narrative_stage"],
+        "filter_options": ["rarity", "effect_type", "narrative_stage", "favorites"]
+      }
+    }
+  }
+  
